@@ -10,7 +10,7 @@ import (
 	"math/big"
 )
 
-const targetBits = 12
+const targetBits = 18
 
 type ProofOfWork struct {
 	block  *Block
@@ -61,7 +61,7 @@ func (pow *ProofOfWork) Run() (int, []byte) {
 }
 func (pow *ProofOfWork) Validate() bool {
 	var hashInt big.Int
-	data := pow.prepareData(pow.block.nonce)
+	data := pow.prepareData(pow.block.Nonce)
 
 	hash := sha256.Sum256(data)
 

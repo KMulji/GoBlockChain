@@ -91,12 +91,12 @@ func (bc *BlockChain) Iterator() *BlockChainIterator {
 }
 
 func (iter *BlockChainIterator) Next() *Block {
-	var block *Block
+	var block *Block = &Block{}
 
 	err := iter.db.View(func(tx *bbolt.Tx) error {
 		b := tx.Bucket([]byte("blocks"))
 		encoded := b.Get(iter.currentHash)
-		block = Deserialize(encoded)
+		block.Deserialize(encoded)
 
 		return nil
 

@@ -96,4 +96,27 @@ func main() {
 
 	cli := CLI{bc}
 	cli.Run()
+
+	// bc.AddBlock("Hello")
+	// bc.AddBlock("Hello 2")
+	// bc.AddBlock("Hello 3")
+
+	// bci := bc.Iterator()
+
+	// for {
+	// 	block := bci.Next()
+
+	// 	fmt.Printf("Prev. hash: %x\n", block.PrevBlockHash)
+	// 	fmt.Printf("Data: %s\n", block.Data)
+	// 	fmt.Printf("Hash: %x\n", block.Hash)
+	// 	fmt.Printf("Nonce is %d \n", block.Nonce)
+	// 	pow := blockchain.NewProofOfWork(block)
+	// 	fmt.Printf("PoW: %s\n", strconv.FormatBool(pow.Validate()))
+	// 	fmt.Println()
+
+	// 	if len(block.PrevBlockHash) == 0 {
+	// 		break
+	// 	}
+	// }
+
 }
