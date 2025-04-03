@@ -28,7 +28,7 @@ type Transaction struct {
 
 func CoinBaseTx(to, data string) *Transaction {
 	if data == "" {
-		data = fmt.Sprintf("Coints to %s", to)
+		data = fmt.Sprintf("Coins to %s", to)
 	}
 
 	txin := TXInput{[]byte{}, -1, data}
